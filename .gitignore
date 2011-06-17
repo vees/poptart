@@ -1,0 +1,4 @@
+*.py
+settings.py
+*.db*
+*.csv
