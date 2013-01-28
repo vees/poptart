@@ -5,7 +5,10 @@ import links
 
 # Create your views here.
 def redirect(request, shortlink):
-	location = links.fetch_link(shortlink)
+	try:
+		location = links.fetch_link(shortlink)
+	except:
+		return HttpResponseNotFound(content='This link caused an error, Jim')
 	if location==False:
 		return HttpResponseNotFound(content='This link has not been defined yet')
 	return HttpResponseRedirect(location) 

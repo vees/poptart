@@ -6,7 +6,7 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
   (r'^$', 'poptart.pipeline.views.index'),
-	(r'^(?P<shortlink>[a-zA-Z0-9]{1,4})$', 'poptart.pipeline.views.redirect'),
+	(r'^(?P<shortlink>.*)$', 'poptart.pipeline.views.redirect'),
     # Example:
     # (r'^poptart/', include('poptart.foo.urls')),
 

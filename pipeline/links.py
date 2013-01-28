@@ -1,9 +1,13 @@
 import sys
-sys.path.append("/home/rob/Projects/")
-from models import *
+import os
+sys.path.append('/home/robvees/4ve.es/')
+sys.path.append('/home/robvees/local/lib/python2.7/site-packages')
+os.environ['DJANGO_SETTINGS_MODULE'] = "poptart.settings"
+import django.core.handlers.wsgi
 import string
 import random
 import urllib
+from models import *
 
 ALPHABET = string.ascii_lowercase + string.ascii_uppercase + string.digits
 ALPHABET_REVERSE = dict((c, i) for (i, c) in enumerate(ALPHABET))
