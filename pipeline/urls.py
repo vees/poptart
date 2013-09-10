@@ -5,14 +5,7 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-  (r'^$', 'poptart.pipeline.views.index'),
-	(r'^(?P<shortlink>.*)$', 'poptart.pipeline.views.redirect'),
-    # Example:
-    # (r'^poptart/', include('poptart.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    (r'^api/new/$', 'poptart.pipeline.views.set_with_secret'),
+    (r'^$', 'poptart.pipeline.views.index'),
+    (r'^(?P<shortlink>.*)$', 'poptart.pipeline.views.redirect'),
 )
