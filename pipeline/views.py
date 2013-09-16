@@ -32,7 +32,7 @@ def set_with_secret(request):
             return HttpResponse("http://4ve.es/" + location)
         except Exception as ex:
             raise ex
-            return HttpResponse("Exception %s %s %s" % (urltoshrink,hmachash,calchmac))
+            return HttpResponse("Exception %s %s" % (urltoshrink,hmachash,calchmac))
     else:
-        return HttpResponse("Invalid KVP %s %s %s" % (urltoshrink,hmachash,calchmac))
+        return HttpResponse("Invalid KVP %s %s" % (urltoshrink,hmachash,calchmac))
 
